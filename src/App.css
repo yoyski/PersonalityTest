@@ -1,0 +1,179 @@
+make this responsive in mobile and laptop or pc /* Container for question */
+.page {
+  background-color: pink;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  row-gap: 10px;
+  height: 100vh;
+  height: 100dvh;
+  padding: 5px 0px;
+}
+
+.row-one {
+  display: flex;
+  justify-content: center;
+}
+
+
+.number-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 72px;
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 5px solid #5086DC;
+}
+
+.question-id {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.question-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(200px, 90%, 500px);
+  height: 100%;
+  padding: 0 32px 0 32px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.question-text {
+  text-align: center;
+  color: #000000;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 2px;
+}
+
+.choice-container {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid transparent;
+  margin-top: 1rem;
+  padding: 2px;
+}
+
+.choice-container.selected {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px dashed #5086DC;
+  padding: 2px;
+}
+
+/* Grid for choices */
+.choices-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: clamp(200px, 90%, 400px);
+  height: auto;
+  justify-items: center;;
+}
+
+/* Choice buttons */
+.choice-btn{
+  max-width: 130px;
+  aspect-ratio: 1 / 1;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* Images inside choices */
+.choice-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Next button */
+.next-btn {
+  background-color: #2D59B8;
+  border: none;
+  color: #ffffff;
+  font-family: "Jockey One", sans-serif;
+  letter-spacing: 2px;
+  font-size: 30px;
+  padding: 10px 60px;
+  border-radius: 50px;
+}
+
+.next-btn-disabled {
+  background-color: gray;
+  border: none;
+  color: #ffffff;
+  font-family: "Jockey One", sans-serif;
+  letter-spacing: 2px;
+  font-size: 30px;
+  padding: 10px 60px;
+  border-radius: 50px;
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;  
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 0px 10%;
+  width: auto;
+  row-gap: 10px;
+  height: 100vh;
+  height: 100dvh;
+  padding: 5px 0px
+}
+
+.result-title{
+  font-size: 35px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-power {
+  background: #ffffff;
+  color: #151659;
+  text-align: center;
+}
+
+.result-img {
+  width: 250px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.result-description {
+  font-size: 25px;
+  width: clamp(200px, 90%, 500px);
+  text-align: center;
+}
+
+.restart-btn {
+  background-color: #2D59B8;
+  border: none;
+  color: #ffffff;
+  font-family: "Jockey One", sans-serif;
+  letter-spacing: 2px;
+  font-size: 30px;
+  padding: 10px 60px;
+  border-radius: 50px;
+}
