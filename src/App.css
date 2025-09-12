@@ -1,7 +1,99 @@
-make this responsive in mobile and laptop or pc /* Container for question */
-.page {
-  background-color: pink;
+.first-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  row-gap: 10px;
+  height: 100vh;
+  height: 100dvh;
+  padding: 5px 0px;
 }
+
+@media (min-width: 768px) {
+  .first-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .left-container {
+    border-right: 2px gray solid ;
+  }
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  flex: 1; 
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-title h1{
+  color: #FDDD03;
+  font: clamp(60px, 8vw, 60px) "Jockey One", sans-serif;
+}
+
+.start-btn {
+  background-color: #2D59B8;
+  border: none;
+  color: #ffffff;
+  font-family: "Jockey One", sans-serif;
+  letter-spacing: 2px;
+  font-size: 30px;
+  padding: 10px 60px;
+  border-radius: 50px;
+}
+
+.hero-title h2{
+  color: #C80908;
+  font: clamp(40px, 10vw, 50px) "Jockey One", sans-serif;
+}
+
+.hero-description {
+  color: #AAAAAA;
+  font: clamp(17px, 3vw, 25px) "Jockey One", sans-serif;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-image{
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #FDDD03;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+footer div {
+  color: #333;
+  font-size: 14px;
+  font-family: "Jockey One", sans-serif;
+}
+
+
 
 .container {
   display: flex;
@@ -82,11 +174,12 @@ make this responsive in mobile and laptop or pc /* Container for question */
   grid-template-columns: repeat(2, 1fr);
   width: clamp(200px, 90%, 400px);
   height: auto;
-  justify-items: center;;
+  justify-items: center;
+  ;
 }
 
 /* Choice buttons */
-.choice-btn{
+.choice-btn {
   max-width: 130px;
   aspect-ratio: 1 / 1;
   border: none;
@@ -125,7 +218,7 @@ make this responsive in mobile and laptop or pc /* Container for question */
   border-radius: 50px;
   opacity: 0.3;
   cursor: not-allowed;
-  pointer-events: none;  
+  pointer-events: none;
 }
 
 .result-container {
@@ -141,7 +234,7 @@ make this responsive in mobile and laptop or pc /* Container for question */
   padding: 5px 0px
 }
 
-.result-title{
+.result-title {
   font-size: 35px;
   font-weight: bold;
   display: flex;

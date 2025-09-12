@@ -80,61 +80,99 @@ function App() {
 
   return (
     <>
-      {step === 1 ? (
-        <div className="page">
-          <div className="container">
-            <div className="row-one">
-              <div className="number-box">
-                <span className="question-id">{item.id}</span>
-              </div>
+      {step === 1 && (
+        <div className="first-container">
+          <div className="left-container">
+            <div className="hero-title">
+              <h1>WELCOME TO</h1>
+              <h2>PERSONALITY TEST</h2>
             </div>
-            <div className="question-box row-two">
-              <h1 className="question-text">{item.question}</h1>
+            <div className="hero-image">
+              <img src="/images/hero.png" alt="" />
             </div>
-            <div className="choices-grid">
-              {Object.values(item.choices).map((choice, index) => (
-                <div
-                  key={index}
-                  className={`choice-container ${
-                    answers[item.id] === choice.points ? "selected" : ""
-                  }`}
-                >
-                  <button
-                    className="choice-btn"
-                    onClick={() => {
-                      setIsClicked(true);
-                      setAnswers((prev) => ({
-                        ...prev,
-                        [item.id]: choice.points,
-                      }));
-                      speak(choice.text);
-                    }}
-                  >
-                    {choice.img && (
-                      <img
-                        src={choice.img}
-                        alt={choice.text}
-                        className="choice-img"
-                      />
-                    )}
-                  </button>
-                </div>
-              ))}
-            </div>
-            <button
-              className={isClicked ? "next-btn" : "next-btn-disabled"}
-              onClick={() => {
-                setCurrentQuestion((prev) => Math.min(prev + 1, 15));
-                setIsClicked(false);
-                isDone && setStep(2);
-                console.log(answers);
-              }}
-            >
-              {currentQuestion < 15 ? "Next" : `Show Result`}
+          </div>
+          <div className="right-container">
+            <p className="hero-description">
+              This is a game that will take you on a fun journey of
+              self-discovery, helping you uncover the hidden super power within
+              you — the unique strength that makes you stand out from everyone
+              else.
+            </p>
+            <button className="start-btn" onClick={() => setStep(2)}>
+              Start
             </button>
           </div>
+          <footer className="footer">
+            <div>
+              This personality test game was inspired by content from{" "}
+              <a
+                href="https://youtu.be/BMRlr2DE0Dg?si=oNmTHZHGBTkiVT2U"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Bright Side
+              </a>
+              . All credit for the original questions and ideas goes to them.
+            </div>
+          </footer>
         </div>
-      ) : (
+      )}
+
+      {step === 2 && (
+        <div className="container">
+          <div className="row-one">
+            <div className="number-box">
+              <span className="question-id">{item.id}</span>
+            </div>
+          </div>
+          <div className="question-box row-two">
+            <h1 className="question-text">{item.question}</h1>
+          </div>
+          <div className="choices-grid">
+            {Object.values(item.choices).map((choice, index) => (
+              <div
+                key={index}
+                className={`choice-container ${
+                  answers[item.id] === choice.points ? "selected" : ""
+                }`}
+              >
+                <button
+                  className="choice-btn"
+                  onClick={() => {
+                    setIsClicked(true);
+                    setAnswers((prev) => ({
+                      ...prev,
+                      [item.id]: choice.points,
+                    }));
+                    speak(choice.text);
+                  }}
+                >
+                  {choice.img && (
+                    <img
+                      src={choice.img}
+                      alt={choice.text}
+                      className="choice-img"
+                    />
+                  )}
+                </button>
+              </div>
+            ))}
+          </div>
+          <button
+            className={isClicked ? "next-btn" : "next-btn-disabled"}
+            onClick={() => {
+              setCurrentQuestion((prev) => Math.min(prev + 1, 15));
+              setIsClicked(false);
+              isDone && setStep(3);
+              console.log(answers);
+            }}
+          >
+            {currentQuestion < 15 ? "Next" : `Show Result`}
+          </button>
+        </div>
+      )}
+
+      {step === 3 && (
         <div className="result-container">
           <h1 className="result-title">
             <div>Your Super Power is: </div>
